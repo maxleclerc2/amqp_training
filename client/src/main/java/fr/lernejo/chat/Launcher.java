@@ -17,18 +17,18 @@ public class Launcher {
         String userInput;
         boolean again = true;
 
-        System.out.println("Input a message, we will send it for you (q to quit)");
-        userInput = scanner.nextLine();
-        objet.convertAndSend("", "chat_messages", userInput);
-
         while (again) {
-            System.out.println("Message sent. Input a message, we will send it for you (q to quit)");
+            System.out.println("Input a message, we will send it for you (q to quit)");
             userInput = scanner.nextLine();
             if (userInput.equalsIgnoreCase("q")) {
                 again = false;
                 continue;
             }
             objet.convertAndSend("", "chat_messages", userInput);
+            System.out.print("Message sent. ");
         }
+
+        System.out.println("Bye");
+        return;
     }
 }
